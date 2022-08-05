@@ -1,11 +1,25 @@
-const express = require('express');
-const app = express();
-const mongoose  = require('mongoose');
-app.use(express.json());
+
+const email=	"cloyd.huel@ethereal.email"
+const password="B1MbdVzdYE7BpqwW5C"
+const name='Cloyd Huel'
+const nodemailer = require('nodemailer');
 
 
-app.listen(8080, () => {
-    console.log('Server is running on port 8080');
-
+const transporter = nodemailer.createTransport({
+        host:"smtp.ethereal.email",
+        port:587,//465
+        auth:{
+            user:email,
+            pass:password
+        },
 })
+transporter.sendMail({
+    from:"Dinesh <dineshsingh9582@gmail.com>",
+    to:'dineshsingh9582@gmail.com',
+    subject:'hello random',
+    text:'hello world',
+}).then((clientInformation)=>{
+    console.log(clientInformation,'hello')
+})
+
 

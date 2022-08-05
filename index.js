@@ -6,18 +6,18 @@ const nodemailer = require('nodemailer');
 
 
 const transporter = nodemailer.createTransport({
-        host:"smtp.ethereal.email",
+        service:"gmail",
         port:587,//465
         auth:{
-            user:email,
-            pass:password
+            user:"cyno28cyno@gmail.com",
+            pass:"jzxcwjdofqvdkmar"
         },
 })
 transporter.sendMail({
-    from:"Dinesh <dineshsingh9582@gmail.com>",
-    to:'dineshsingh9582@gmail.com',
-    subject:'hello random',
-    text:'hello world',
+    from:"Dinesh",
+    to:'sonu143nagarkoti@gmail.com',
+    subject:'bhuwaan ',
+    text:'bhuwan chutiya',
 }).then((clientInformation)=>{
     console.log(clientInformation,'hello')
 })
